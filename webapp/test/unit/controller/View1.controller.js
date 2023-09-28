@@ -1,13 +1,13 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"fioriv2northwind/controller/View1.controller"
+	"fioriv2northwind/controller/SmartTable.controller"
 ], function (Controller) {
 	"use strict";
 
-	QUnit.module("View1 Controller");
+	QUnit.module("SmartTable Controller");
 
-	QUnit.test("I should test the View1 controller", function (assert) {
+	QUnit.test("I should test the SmartTable controller", function (assert) {
 		var oAppController = new Controller();
 		oAppController.onInit();
 		assert.ok(oAppController);

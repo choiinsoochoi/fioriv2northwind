@@ -1,5 +1,5 @@
 sap.ui.define([
-	"fioriv2northwind/test/unit/controller/View1.controller"
+	"fioriv2northwind/test/unit/controller/SmartTable.controller"
 ], function () {
 	"use strict";
 });

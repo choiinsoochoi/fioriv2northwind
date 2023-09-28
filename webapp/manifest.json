@@ -94,20 +94,20 @@
       },
       "routes": [
         {
-          "name": "RouteView1",
+          "name": "RouteSmartTable",
           "pattern": ":?query:",
           "target": [
-            "TargetView1"
+            "TargetSmartTable"
           ]
         }
       ],
       "targets": {
-        "TargetView1": {
+        "TargetSmartTable": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "View1",
-          "viewName": "View1"
+          "viewId": "SmartTable",
+          "viewName": "SmartTable"
         }
       }
     },

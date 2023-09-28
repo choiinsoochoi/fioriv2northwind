@@ -1,0 +1,69 @@
+<mvc:View
+    controllerName="fioriv2northwind.controller.SmartTable"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+<smartFilterBar:SmartFilterBar 
+    id="smartFilterBar" 
+    entitySet="Customers" 
+    search="handleSearch" 
+    liveMode="true">
+
+    <!-- Group -->
+    <smartFilterBar:controlConfiguration>
+        <smartFilterBar:ControlConfiguration 
+            id="smartFilterBarCustomerID" 
+            key="CustomerID" 
+            groupId="_BASIC" 
+            label="Customer ID">
+            <smartFilterBar:customControl>
+                <!-- <Input type="Text" value="{/CustomerID}" /> -->
+            </smartFilterBar:customControl>
+        </smartFilterBar:ControlConfiguration>
+
+        <smartFilterBar:ControlConfiguration 
+            id="smartFilterBarCompanyName" 
+            key="CompanyName" 
+            groupId="_BASIC" 
+            label="Company Name">
+            <smartFilterBar:customControl>
+                <!-- <Input type="Text" value="{/CompanyName}" /> -->
+            </smartFilterBar:customControl>
+        </smartFilterBar:ControlConfiguration>
+    </smartFilterBar:controlConfiguration>
+</smartFilterBar:SmartFilterBar>
+
+
+
+            <VBox>
+                <!-- Smart Table -->
+                <Button
+                    text="Search"
+                    press="handleSearch"
+                />
+
+                <smarttable:SmartTable
+                    id="smartTable"
+                    initiallyVisibleFields="CustomerID,CompanyName,ContactName,ContactTitle,Address"
+                    entitySet="Customers"
+                    smartFilterId="smartFilterBar"
+                    tableType="Table"
+                    useVariantManagement="true"
+                    useExportToExcel="true"
+                    useTablePersonalisation="true"
+                    header="Customers"
+                    showRowCount="true"
+                    enableAutoBinding="true"
+                />
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
